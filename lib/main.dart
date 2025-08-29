@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: lightMode,
       home: Scaffold(
         body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: SubscriptionPlanPage(),
         ),
       ),

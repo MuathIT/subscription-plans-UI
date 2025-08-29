@@ -23,13 +23,12 @@ class SubscriptionPlanPage extends StatelessWidget {
         centerTitle: true,
         title: Text(
           "Subscription plan",
-          style: TextStyle(fontWeight: FontWeight.bold),
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 20),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+        padding: const EdgeInsets.only(top: 15),
+        child: ListView(
+          // mainAxisAlignment: MainAxisAlignment.start,
           children: [
             // subscription method -> monthly | yearly.
             Container(
@@ -83,7 +82,7 @@ class SubscriptionPlanPage extends StatelessWidget {
 
             // starter plan card.
             Container(
-              height: 300,
+              height: 280,
               width: double.infinity,
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               decoration: BoxDecoration(
@@ -167,7 +166,6 @@ class SubscriptionPlanPage extends StatelessWidget {
                           color: Colors.white60,
                           decoration: TextDecoration.lineThrough,
                           decorationColor: Colors.white60,
-                          decorationThickness: 3
                         ),
                       )
                     ],
@@ -184,13 +182,120 @@ class SubscriptionPlanPage extends StatelessWidget {
                   ),
 
                   const SizedBox(height: 15),
-                  feature("Unlimited clients and projects"),
+                  feature("Unlimited clients and projects", Colors.white60),
                   const SizedBox(height: 5),
 
-                  feature("Invoices and payment"),
+                  feature("Invoices and payment", Colors.white60),
                   const SizedBox(height: 5),
 
-                  feature("Proposals and contract"),
+                  feature("Proposals and contract", Colors.white60),
+                  const SizedBox(height: 5),
+                ],
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+
+
+            // essentials plan card.
+            Container(
+              height: 280,
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              decoration: BoxDecoration(
+                color: lightMode.colorScheme.secondary,
+                borderRadius: BorderRadius.circular(15),
+              ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    // crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      // crown icon.
+                      Icon(
+                        Icons.window_rounded,
+                        color: Colors.black,
+                        size: 50,
+                      ),
+
+                      const Spacer(),
+
+                      // included.
+                      Container(
+                        width: 100,
+                        padding: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: lightMode.colorScheme.primary,
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Included",
+                            style: TextStyle(color: Colors.black45),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+
+                  const SizedBox(height: 15),
+
+                  // plan info.
+                  Row(
+                    children: [
+                      Text(
+                        "Essentials Plan",
+                        style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                      const Spacer(),
+                      Text(
+                        "\$18.99",
+                        style: TextStyle(color: Colors.black, fontSize: 18),
+                      ),
+                    ],
+                  ),
+
+                  Row(
+                    children: [
+                      Text(
+                        "Productivity & automation tools",
+                        style: TextStyle(color: Colors.black54),
+                      ),
+                      const Spacer(),
+                      Text(
+                        "\$22.99",
+                        style: TextStyle(
+                          color: Colors.black54,
+                          decoration: TextDecoration.lineThrough,
+                          decorationColor: Colors.grey,
+                        ),
+                      )
+                    ],
+                  ),
+
+                  const SizedBox(height: 15),
+
+                  Text(
+                    "Features",
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold
+                    ),
+                  ),
+
+                  const SizedBox(height: 15),
+                  feature("Remove powered by Honeybook", Colors.black38),
+                  const SizedBox(height: 5),
+
+                  feature("Expense management", Colors.black38),
+                  const SizedBox(height: 5),
+
+                  feature("QuickBooks online integration", Colors.black38),
                   const SizedBox(height: 5),
                 ],
               ),
@@ -203,20 +308,20 @@ class SubscriptionPlanPage extends StatelessWidget {
 }
 
 // function for features.
-Widget feature (String text) {
+Widget feature (String text, Color color) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.start,
     children: [
       Icon(
         Icons.check_circle_outline_rounded,
-        color: Colors.white60,
+        color: color,
         size: 20,
       ),
       const SizedBox(width: 5),
       Text(
         text,
         style: TextStyle(
-          color: Colors.white60,
+          color: color,
         ),
       )
     ],
