@@ -8,17 +8,12 @@ class SubscriptionPlanPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.all(4),
-          child: Container(
-            height: 15,
-            width: 15,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: lightMode.colorScheme.secondary,
-            ),
-            child: Icon(Icons.arrow_back_outlined, color: Colors.black54),
+        leading: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: lightMode.colorScheme.secondary,
           ),
+          child: Icon(Icons.arrow_back_outlined, color: Colors.black54),
         ),
         centerTitle: true,
         title: Text(
@@ -106,11 +101,13 @@ class SubscriptionPlanPage extends StatelessWidget {
                     // crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
+
                       // crown icon.
-                      Icon(
-                        Icons.window_rounded,
+                      Image.asset(
+                        'assets/icons/crown.png',
+                        height: 40,
+                        width: 40,
                         color: Colors.white,
-                        size: 50,
                       ),
 
                       const Spacer(),
@@ -167,7 +164,7 @@ class SubscriptionPlanPage extends StatelessWidget {
                           decoration: TextDecoration.lineThrough,
                           decorationColor: Colors.white60,
                         ),
-                      )
+                      ),
                     ],
                   ),
 
@@ -196,8 +193,6 @@ class SubscriptionPlanPage extends StatelessWidget {
 
             const SizedBox(height: 20),
 
-
-
             // essentials plan card.
             Container(
               height: 280,
@@ -216,10 +211,11 @@ class SubscriptionPlanPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       // crown icon.
-                      Icon(
-                        Icons.window_rounded,
+                      Image.asset(
+                        'assets/icons/crown.png',
+                        height: 40,
+                        width: 40,
                         color: Colors.black,
-                        size: 50,
                       ),
 
                       const Spacer(),
