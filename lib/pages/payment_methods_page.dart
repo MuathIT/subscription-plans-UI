@@ -1,31 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:subscription/pages/subscription_page.dart';
 import 'package:subscription/widgets/payment_method_tile.dart';
 
+// ignore: must_be_immutable
 class PaymentMethodsPage extends StatelessWidget {
-  // get the plan from plans page.
-  // final plan;
-  const PaymentMethodsPage({
-    super.key,
-    // required this.plan
-  });
+  final Map<String, dynamic> plan;
+  PaymentMethodsPage({super.key, required this.plan});
+
+  // user active card (master card).
+  Map<String, String> mastercardInfo = {
+    "cardNumber": "5156 2402 5337 7173",
+    "ownerName": "Jane Fox",
+    "expiresOn": "02/28",
+  };
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.grey[350],
+        leadingWidth: 75,
+        leading: GestureDetector(
+          onTap: () => Navigator.pop(context),
+          child: Container(
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.grey[350],
+            ),
+            child: Icon(Icons.arrow_back_outlined, color: Colors.black54),
           ),
-          child: Icon(Icons.arrow_back_outlined, color: Colors.black54),
         ),
         centerTitle: true,
         title: Text("Subscription", style: TextStyle(color: Colors.black)),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 25),
+        padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -83,7 +92,7 @@ class PaymentMethodsPage extends StatelessWidget {
 
                     // plan name.
                     Text(
-                      "Starter Plan",
+                      plan['plan'],
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 28,
@@ -93,14 +102,14 @@ class PaymentMethodsPage extends StatelessWidget {
 
                     // subtitle.
                     Text(
-                      "Seamless client experiences",
+                      plan['description'],
                       style: TextStyle(color: Colors.black54, fontSize: 16),
                     ),
                   ],
                 ),
               ),
 
-              const SizedBox(height: 15),
+              const SizedBox(height: 25),
 
               // payment methods.
               Text(
@@ -112,43 +121,57 @@ class PaymentMethodsPage extends StatelessWidget {
 
               /// methods.
               // mastercard.
-              const PaymentMethodTile(
+              PaymentMethodTile(
                 icon: "assets/icons/mastercard.svg.png",
-                method: "Mastercard",
+                method: mastercardInfo['cardNumber'],
                 fill: true,
               ),
               const SizedBox(height: 15),
 
               // paypal.
-              const PaymentMethodTile(
+              PaymentMethodTile(
                 icon: "assets/icons/paypal.png",
                 method: "PayPal",
               ),
               const SizedBox(height: 15),
 
               // google pay.
-              const PaymentMethodTile(
+              PaymentMethodTile(
                 icon: "assets/icons/google.png",
                 method: "Google Pay",
               ),
               const SizedBox(height: 15),
 
               // apple pay.
-              const PaymentMethodTile(
+              PaymentMethodTile(
                 icon: "assets/icons/apple.png",
                 method: "Apple Pay",
               ),
-              const SizedBox(height: 50),
+
+              const SizedBox(height: 100),
 
               // continue button.
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: const Color.fromARGB(255, 1, 78, 222),
-                  borderRadius: BorderRadius.circular(25),
+              GestureDetector(
+                onTap: () {
+                  // navigate to the subscription page.
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (_) => SubscriptionPage(plan: plan, card: mastercardInfo,))
+                  );
+                },
+                child: Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(211, 1, 78, 222),
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "Continue",
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                  ),
                 ),
-                child: Center(child: Text("Continue", style: TextStyle(color: Colors.white, fontSize: 18))),
               ),
             ],
           ),

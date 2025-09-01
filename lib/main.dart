@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:subscription/pages/payment_methods_page.dart';
 import 'package:subscription/pages/subscription_plan_page.dart';
 import 'package:subscription/themes/light_mode.dart';
 
@@ -15,12 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: lightMode,
-      home: Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: PaymentMethodsPage(),
-        ),
-      ),
+      home: SubscriptionPlanPage()
     );
   }
 }

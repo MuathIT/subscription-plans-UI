@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class PaymentMethodTile extends StatelessWidget {
   final String icon;
-  final String method;
+  final String? method;
   final bool fill;
   const PaymentMethodTile({
     super.key,
@@ -37,8 +37,8 @@ class PaymentMethodTile extends StatelessWidget {
 
           // method name.
           Text(
-            method,
-            style: TextStyle(fontSize: 18),
+           fill ? "**** **** **** ${method!.substring(14, 19)}" : method!,
+            style: TextStyle(fontSize: 20),
           ),
 
           const Spacer(),
