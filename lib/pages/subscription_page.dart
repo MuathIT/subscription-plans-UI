@@ -28,7 +28,7 @@ class SubscriptionPage extends StatelessWidget {
         title: Text("Subscription", style: TextStyle(color: Colors.black)),
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 16, left: 16, right: 16),
+        padding: const EdgeInsets.only(top: 10, left: 16, right: 16),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -107,7 +107,7 @@ class SubscriptionPage extends StatelessWidget {
 
               // card + card information.
               Container(
-                height: 250,
+                height: 240,
                 width: double.infinity,
                 padding: EdgeInsets.all(20),
                 decoration: BoxDecoration(
@@ -219,28 +219,28 @@ class SubscriptionPage extends StatelessWidget {
                 ),
               ),
 
-              const SizedBox(height: 25),
+              const SizedBox(height: 20),
 
               /// Amount + Tax + Total prices.
 
               // Amount.
               PriceTile(text: "Amount", price: plan['price']),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
 
               // Tax.
               PriceTile(text: "Tax", price: 1.99.toString()),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
 
               Divider(color: Colors.black12),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 15),
 
               // Total.
               PriceTile(text: "Total", price: (double.parse(plan['price']) + 1.99).toStringAsFixed(2), total: true),
 
-              const SizedBox(height: 30),
+              const SizedBox(height: 20),
 
               // Get subscription button.
               Container(
@@ -253,7 +253,7 @@ class SubscriptionPage extends StatelessWidget {
                 child: Center(
                   child: Text(
                     "Get Subscription",
-                    style: TextStyle(color: Colors.white, fontSize: 18),
+                    style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
               ),

@@ -148,7 +148,7 @@ class PaymentMethodsPage extends StatelessWidget {
                 method: "Apple Pay",
               ),
 
-              const SizedBox(height: 100),
+              const SizedBox(height: 30),
 
               // continue button.
               GestureDetector(
@@ -168,7 +168,7 @@ class PaymentMethodsPage extends StatelessWidget {
                   child: Center(
                     child: Text(
                       "Continue",
-                      style: TextStyle(color: Colors.white, fontSize: 18),
+                      style: TextStyle(color: Colors.white, fontSize: 20),
                     ),
                   ),
                 ),
