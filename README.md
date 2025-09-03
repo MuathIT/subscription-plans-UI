@@ -1,16 +1,57 @@
-# subscription
+# Subscription Plans UI  
 
-A new Flutter project.
+A simple and clean **3-pages UI flow** that guides the user through:  
 
-## Getting Started
+1. **Subscription Plans Page** – Select a plan that fits your needs.  
+2. **Payment Methods Page** – Choose a preferred payment option.  
+3. **Pay Page** – Final confirmation and payment screen.  
 
-This project is a starting point for a Flutter application.
+This project demonstrates a smooth and modern checkout flow design.  
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🚀 Features  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- 📱 Responsive UI design  
+- 🎨 Modern, minimal layout  
+- 🔄 Navigation between pages (Plans → Payment → Pay)  
+- 💳 Multiple payment method options  
+
+---
+
+## 🛠️ Tech Stack  
+
+- **Framework**: Flutter (Dart)  
+- **UI**: Custom widgets, Material Design  
+
+---
+
+## 📸 Preview  
+
+[Subscription Plans Page](screenshots/plans.png)
+[Payment Methods Page](screenshots/payment.png)
+[Pay Page](screenshots/pay.png)
+
+---
+
+## 🔧 Installation & Usage
+
+1. Clone the repository -> git clone https://github.com/MuathIT/subscription-plans-UI
+2. Navigate to the project folder -> cd subscription-plans-UI
+3. Install dependencies -> flutter pub get
+4. Run the app -> flutter run
+
+---
+
+---
+
+## 📬 Contact  
+
+If you have any questions, suggestions, or feedback, feel free to reach out:  
+
+- GitHub: [MuathIT](https://github.com/MuathIT)  
+- Email: 1213muaf@gmail.com  
+- LinkedIn: [Muath Al-Rsaini](https://www.linkedin.com/in/muath-al-rsaini-60322836b/)  
+
+
+
